@@ -1,0 +1,21 @@
+Home automation
+
+https://steps2make.com/2017/09/esp8266-simple-home-automation/
+https://www.instructables.com/id/Home-Automation-With-ESP8266-WiFi-Without-Using-Bl/
+https://everythingesp.com/esp8266-tutorial-series-for-new-comers/
+
+Tech Ref for ESP8266
+
+https://stackoverflow.com/questions/48475428/get-value-from-text-field-at-a-webserver-esp8266
+https://www.instructables.com/id/Instructables-Hit-Counter-ESP8266-01/
+https://techtutorialsx.com/2016/12/11/esp8266-external-interrupts/
+http://resources.snydergroupinc.com/groupthink/google-sheets-api-html-form-data-to-google-sheet
+http://log.liminastudio.com/itp/physical-computing/arduino-a-new-improved-button-library-with-some-handy-features
+
+https://github.com/esp8266/Arduino/issues/1537 variabili in EEProm
+
+https://circuits4you.com/2016/12/16/esp8266-web-server-html/ pagine html varie
+
+https://circuits4you.com/2018/11/21/esp32-access-point-station-ap-html-web-server-arduino/
+
+https://www.esp8266.com/viewtopic.php?f=160&t=15800 passing varraible
