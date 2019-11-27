@@ -1,0 +1,11 @@
+FILE CIAO.BAT
+
+@echo off
+set nome=%1 
+set cognome=%2
+echo Il mio nome e': %nome%
+echo Il mio cognome e': %cognome%
+set eta=%3
+echo La mia eta' e': %eta%
+echo L'estensione del file e': %0
+pause
