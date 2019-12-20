@@ -1,0 +1,112 @@
+/* LIBRERIA PASSWORD: https://www.instructables.com/id/Arduino-password-lock/
+ *  SCARICARE LO ZIP, POI INSERIRE NELLA CARTELLA DI INSTALLAZIONE DI ARDUINO DOVE C'E' LA CARTELLA "LIBRARIES".
+*/
+// LIBRERIE
+#include <Password.h>
+#include <Servo.h>
+#include <LiquidCrystal_I2C.h>
+#include <Keypad.h>
+// VARIABILI
+Servo myservo;
+LiquidCrystal_I2C schermo(0x27,20,4);
+Password password = Password("4578");
+const byte RIGHE = 4; 
+const byte COLONNE = 4; 
+char tasti[RIGHE][COLONNE] = {
+  {'1','2','3','A'},
+  {'4','5','6','B'},
+  {'7','8','9','C'},
+  {'*','0','#','D'}
+};
+byte righePin[RIGHE] = {2,3,4,5}; 
+byte colPin[COLONNE] = {6,7,8,9}; 
+Keypad keypad = Keypad(makeKeymap(tasti), righePin, colPin, RIGHE, COLONNE);
+int i=0;
+
+void setup(){
+  // inizializzo lo schermo
+  schermo.init(); 
+  schermo.backlight();
+  // attivo la seriale per debug
+  Serial.begin(9600);
+  keypad.setDebounceTime(50);
+  // chiamo il menu
+  menu();
+  // attivo gli eventi del tastierino numerico
+  keypad.addEventListener(keypadEvent);
+  myservo.attach(11); // porta attaccata al pin D11
+  myservo.write(90); // servo motore chiuso
+}
+
+void menu(){
+  password.reset();
+  schermo.clear();
+  schermo.setCursor(3,0);
+  schermo.print("PORTA BLOCCATA");
+  schermo.setCursor(0,1);
+  schermo.print("CONFERMA: '#' ");
+  schermo.setCursor(0,2);
+  schermo.print("CANCELLA: '*' ");
+  schermo.setCursor(0,3);
+  schermo.print("CODICE: ");
+  schermo.setCursor(8,3);
+  keypad.addEventListener(keypadEvent); 
+}
+
+void loop(){
+  keypad.getKey(); // per ottenere l'input dei tasti
+  if (i>12){
+  i=0;
+  menu();
+  }
+  }
+
+void keypadEvent(KeypadEvent eKey){
+  switch (keypad.getState()){
+  case PRESSED:
+    schermo.print(eKey);
+    i++;
+    switch (eKey){
+    case '#': 
+      controllo_password();
+      break;
+    case '*': 
+         menu(); break;
+    default:
+      password.append(eKey);
+}
+}
+}
+
+void controllo_password(){
+  /*
+  * "password.evaluate()" serve per ottenere l'effettivo valore della password
+  */
+  if (password.evaluate()){
+    // digitalWrite(greenLED, HIGH);
+    schermo.clear();
+    delay(30);
+    schermo.setCursor(5, 1);
+    schermo.print("BENVENUTO!");
+    sblocca_porta();
+    menu();
+  }
+  else{
+    loop(); {
+    }
+    schermo.clear();
+    delay(10);
+    schermo.setCursor(3, 1);
+    schermo.print("ACCESSO NEGATO");
+    delay(1500);
+    schermo.clear();
+    menu();
+  }
+}
+
+void sblocca_porta(){ 
+  /*apro la porta di 180 gradi, dopo 5 secondi si chiude a 90*/
+  myservo.write(180);
+  delay(5000);
+  myservo.write(90);
+}
