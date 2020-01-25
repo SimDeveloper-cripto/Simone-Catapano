@@ -1,6 +1,8 @@
 /* LIBRERIA PASSWORD: https://www.instructables.com/id/Arduino-password-lock/
  *  SCARICARE LO ZIP, POI INSERIRE NELLA CARTELLA DI INSTALLAZIONE DI ARDUINO DOVE C'E' LA CARTELLA "LIBRARIES".
 */
+// servono un servo motore ed un display Lcd_i2c
+
 // LIBRERIE
 #include <Password.h>
 #include <Servo.h>
