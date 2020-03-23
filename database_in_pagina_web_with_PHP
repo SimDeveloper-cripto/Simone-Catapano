@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<title> TEST_PHP </title>
+    <body background="image.gif">
+	<div class="testata">
+  		<h1> Database su pagina web tramite PHP </h1>
+	</div> 
+	
+	
+        <?php
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "mysql_php";
+            
+            // CREO LA CONNESSIONE
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            
+            if ($conn->connect_error) {
+                die("Connessione scaduta: " . $conn->connect_error);
+            } 
+            
+            $query = "SELECT * FROM episodi_naruto";
+            $risultato = $conn->query($query);
+            
+            if ($risultato->num_rows > 0) {
+                // MANDO A VIDEO
+                while($row = $risultato->fetch_assoc()) {
+			echo "SERIE: " . $row["serie_stagione"]. "<br> - EPISODIO: " . $row["num_ep"]. "<br> - FORMATO: " . $row["formato"]. "<br><br>";
+                }
+            } else {
+                echo "0 results";
+            }
+	    // CHIUDO LA CONNESSIONE
+            $conn->close();
+        ?>
+
+    </body>
+</head>
+</html>
