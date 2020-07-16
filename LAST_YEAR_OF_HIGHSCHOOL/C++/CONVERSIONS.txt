@@ -1,0 +1,64 @@
+// DECIMALE A BINARIO //
+#include <iostream>
+using namespace std;
+int main () {
+   long int decimale, somma, i=1, k;
+  
+  cout << "Inserire il numero decimale da convertire: \t";
+  cin >> decimale;
+  
+  do {
+     k = decimale % 2;
+     somma = somma + (i*k);
+     decimale = decimale /2;
+     i = i*10;
+  } while (decimale > 0);
+   
+   decimale ++;
+    
+   cout << "LEGGI DA SINISTRA VERSO DESTRA!";
+   cout << "Converione in binario: \t " << somma << endl;
+
+   system ("pause");
+}
+
+
+
+// BINARIO A DECIMALE // 
+#include <iostream>
+using namespace std;
+int main(){
+     long int binario, decimale = 0, k, numero, base = 1;
+     
+     cout << "Inserire il numero binario da convertire: \t";
+     cin >> binario;
+  
+     binario = numero;
+
+     while ( numero > 0){
+         k = k % 10;
+         decimale = decimale + k*base;
+         base = base * 2;
+         numero = numero / 10;
+    }
+    numero ++;
+   
+    cout << endl;
+    cout << "Il corrispettivo in decimale del numero indicato e': \t" << decimale << endl;
+
+   system ("pause");  
+}
+
+
+
+// INSIEME //
+#include <iostream>
+#include <conio.h>
+#include <stdlib.h>
+int main(){
+
+   decimalebinario();
+   binariodecimale();
+
+   return 0;
+}
