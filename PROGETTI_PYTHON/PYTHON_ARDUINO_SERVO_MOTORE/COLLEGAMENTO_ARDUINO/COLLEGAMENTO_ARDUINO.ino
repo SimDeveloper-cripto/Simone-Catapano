@@ -23,7 +23,7 @@ void loop(){
     schermo.clear();
     // digitalWrite(13, HIGH); 
   } else if (COMANDO == 's' || COMANDO == 'S'){
-    myservo.write(90);
+    myservo.write(0);
     schermo.setCursor(0,1);
     schermo.print("DESTRA");
     delay(1500);
