@@ -1,5 +1,0 @@
-[x] Installare node.js sul proprio computer
-[x] Create una cartella per il progetto
-[x] All'interno della cartella: "npm install express"
-[x] Per avviare il file index.js: accedere alla cartella tramite terminale e eseguire il comando "node index.js"
-[x] Digitare sul browser l'indirizzo mostrato nel terminale
