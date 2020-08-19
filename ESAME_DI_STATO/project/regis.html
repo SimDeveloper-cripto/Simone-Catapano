@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> PAGINA DI REGISTRAZIONE </title>
+        <style>
+            div {
+                border-radius: 5px;
+                background-color: #B0C4DE;
+                padding: 20px;
+                width: 25%;
+                font-family: Verdana;
+                text-align: left;
+            }
+            input[type = text] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            input[type = password] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            input[type = submit] { 
+                background-color:#FF7F50;
+                border: none; 
+                border-radius: 4px;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            input[type = reset] {
+                background-color:#FF7F50;
+                border: none;
+                border-radius: 4px; 
+                font-family: sans-serif;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <center> <div> 
+            <center> <h2> PAGINA DI REGISTRAZIONE </h2> </center>
+            <form action="reg.php" method="post">  
+                Inserire e-mail: <input type="text" name="email" size="40"/> <br> <br>
+                Inserire password: <input type="password" name="password" size="40"/> <br> <br>
+                <input type="submit" name="register" value="REGISTRATI"/>
+                <input type="reset" name="cancella" value="CANCELLA"/>
+            </form>
+        </div> </center>
+    </body>
+</html>
