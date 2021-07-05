@@ -1,0 +1,55 @@
+import javax.mail.*;
+import java.util.Properties;
+import com.sun.mail.pop3.POP3Store; 
+
+public class ReadEmail {
+    public static final String USERNAME = "USERNAME"; // inserisci l'username della tua mail. 
+    public static final String PASSWORD = "PASSWORD"; // inserisci la password della tua mail.
+    
+    public static void main(String[] args) throws Exception {
+    	String host = "pop.gmail.com";
+    	
+        Properties props = new Properties();
+        props.put("mail.pop3.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.pop3.socketFactory.fallback", "false");
+        props.put("mail.pop3.socketFactory.port", "995");
+        props.put("mail.pop3.port", "995");
+        props.put("mail.pop3.host", host);
+        props.put("mail.pop3.user", ReadEmail.USERNAME);
+        props.put("mail.store.protocol", "pop3");
+
+        // OGGETTO AUTENTICATORE.
+        Authenticator auth = new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(ReadEmail.USERNAME, ReadEmail.PASSWORD);
+            }
+        };
+
+        // CREO SESSIONE MAIL.
+        Session session = Session.getDefaultInstance(props, auth);
+        
+        // CONNETTO AL POP3 PROVIDER.
+        POP3Store store = (POP3Store)session.getStore("pop3");
+        store.connect(host, ReadEmail.USERNAME, ReadEmail.PASSWORD);
+        
+        // SALVO I MESSAGGI IN UNA CARTELLA.
+        Folder inbox = store.getFolder("INBOX");
+        inbox.open(Folder.READ_ONLY);
+        
+        Message[] messages = inbox.getMessages();  
+		for (int i = 0; i < messages.length; i++) {  
+			Message message = messages[i];  
+			System.out.println("-------------------------------------------------------");  
+			System.out.println("E-Mail n." + (i + 1));  
+			System.out.println("Oggetto: " + message.getSubject());  
+			System.out.println("Mittente: " + message.getFrom()[0]);  
+			// System.out.println("Testo: " + message.getContent().toString());  
+		}  
+        
+        // CHIUDO STORE E FOLDER.
+        inbox.close(false);
+        store.close();
+        
+    }
+}
