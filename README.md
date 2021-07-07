@@ -6,4 +6,3 @@
 
 --> Convertitori.
 
---> Edit linked list example.
