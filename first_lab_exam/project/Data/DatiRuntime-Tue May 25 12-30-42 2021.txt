@@ -1,0 +1,80 @@
+# 				USER_NAME
+ Davide
+# 				PASSWORD
+ d1ablo_22
+# 				POST_LIST
+Ciao sono Davide!
+Ciao sono Davide!
+Ciao sono Davide!
+Ciao sono Davide!
+Ciao sono Davide!
+Ciao sono Davide!
+Ciao sono Davide!
+Ciao sono Davide!
+Ciao sono Davide!
+Ciao sono Davide!
+# 				ACCOUNT_SEGUITI
+# 				USER_NAME
+ Antonio
+# 				PASSWORD
+ pippo
+# 				POST_LIST
+Ciao sono Antonio!
+Ciao sono Antonio!
+Ciao sono Antonio!
+Ciao sono Antonio!
+Ciao sono Antonio!
+Ciao sono Antonio!
+Ciao sono Antonio!
+Ciao sono Antonio!
+Ciao sono Antonio!
+Ciao sono Antonio!
+# 				ACCOUNT_SEGUITI
+# 				USER_NAME
+ Enrico
+# 				PASSWORD
+ password123
+# 				POST_LIST
+Ciao sono Enrico!
+Ciao sono Enrico!
+Ciao sono Enrico!
+Ciao sono Enrico!
+Ciao sono Enrico!
+Ciao sono Enrico!
+Ciao sono Enrico!
+Ciao sono Enrico!
+Ciao sono Enrico!
+Ciao sono Enrico!
+# 				ACCOUNT_SEGUITI
+# 				USER_NAME
+ Simone
+# 				PASSWORD
+ pluto
+# 				POST_LIST
+Ciao sono Simone!
+Ciao sono Simone!
+Ciao sono Simone!
+Ciao sono Simone!
+Ciao sono Simone!
+Ciao sono Simone!
+Ciao sono Simone!
+Ciao sono Simone!
+Ciao sono Simone!
+Ciao sono Simone!
+# 				ACCOUNT_SEGUITI
+# 				USER_NAME
+ Carmine
+# 				PASSWORD
+ fra127
+# 				POST_LIST
+Ciao sono Carmine!
+Ciao sono Carmine!
+Ciao sono Carmine!
+Ciao sono Carmine!
+Ciao sono Carmine!
+Ciao sono Carmine!
+Ciao sono Carmine!
+Ciao sono Carmine!
+Ciao sono Carmine!
+Ciao sono Carmine!
+# 				ACCOUNT_SEGUITI
